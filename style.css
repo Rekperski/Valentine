@@ -84,12 +84,14 @@ label:hover {
 	background-image: url('https://media.giphy.com/media/a3IWyhkEC0p32/giphy.gif');
 	background-repeat:no-repeat;
 	background-size: cover;
+	height: 550px;
 }
 
 .answer--no {
 	background-image: url('https://media.giphy.com/media/QBEhpJHrv7poQ/giphy.gif');
 	background-repeat:no-repeat;
 	background-size: cover;
+	height: 550px;
 }
 
 input.yes[type=checkbox]:checked ~ .answer--yes {
