@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <h2>Chcesz Zostac Moja Walentynka?</h2>
+        <div class="wrapper">
+            
+            <div class="pikachu">
+              
+              <div class="head">
+             
+                <div class="ears left brown"><div class="ears-inside yellow"></div></div>
+                <div class="ears right brown"><div class="ears-inside yellow"></div></div>
+                
+                <div class="face yellow">
+                  <span class="eye left brown"></span>
+                  <span class="eye right brown"></span>
+                  <span class="mouth">w</span>
+                  
+                  <span class="cachete left"></span>
+                  <span class="cachete right"></span>
+                  
+                </div>
+              </div>
+              
+              <div class="body yellow">
+                
+                <div class="heart"></div>
+             
+                <div class="paw left yellow"></div>
+                <div class="paw right yellow"></div>
+                
+              </div>
+              
+              <div class="leg left yellow-dark"></div>
+              <div class="leg right yellow-dark"></div>
+              
+              <div class="tail yellow-dark"></div>
+              
+            </div>
+            
+              
+              
+              <div class="root">
+                  <input id="cbx" type="radio" name="opt" />
+                  <label for="cbx">
+                      <span class="heart">
+                          <span class="ripple"></span>
+                          <svg class="unchecked" viewBox="0 0 24 24">
+                              <path
+                                  d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                              </path>
+                          </svg>
+                          <svg class="checked" viewBox="0 0 24 24">
+                              <path
+                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                              </path>
+                          </svg>
+                      </span>
+                      <p>Tak</p>
+                  </label>
+                  
+                  <input id="cbx2" type="radio" name="opt"  />
+                  <label for="cbx2">
+                      <span class="heart">
+                          <span class="ripple"></span>
+                          <svg class="unchecked" viewBox="0 0 24 24">
+                              <path
+                                  d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                              </path>
+                          </svg>
+                          <svg class="checked" viewBox="0 0 24 24">
+                              <path
+                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                              </path>
+                          </svg>
+                      </span>
+                      <p>Tak</p>
+                  </label>
+              </div>
+          
+          </div>
+          
+          <div id="confetti"></div>
+
+          <script type="text/javascript">
+            // import { confetti } from 'dom-confetti';
+
+let inputs = document.querySelectorAll('[type="radio"]');
+let confettiCannon = document.querySelector("#confetti");
+
+inputs.forEach(input => input.addEventListener("click", throwConfetti));
+
+const config = {
+  angle: 90,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  dragFriction: 0.1,
+  duration: 3000,
+  stagger: 0,
+  width: "10px",
+  height: "10px",
+  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"] };
+
+
+function throwConfetti() {
+  console.log("throwww!!!!!");
+  confetti(confettiCannon, config);
+}
+
+const defaultColors = ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"];
+
+function createElements(root, elementCount, colors, width, height) {
+  return Array.from({ length: elementCount }).map((_, index) => {
+    const element = document.createElement("div");
+    const color = colors[index % colors.length];
+    element.style["background-color"] = color; // eslint-disable-line space-infix-ops
+    element.style.width = width;
+    element.style.height = height;
+    element.style.position = "absolute";
+    element.style.willChange = "transform, opacity";
+    element.style.visibility = "hidden";
+    root.appendChild(element);
+    return element;
+  });
+}
+
+function randomPhysics(angle, spread, startVelocity, random) {
+  const radAngle = angle * (Math.PI / 180);
+  const radSpread = spread * (Math.PI / 180);
+  return {
+    x: 0,
+    y: 0,
+    wobble: random() * 10,
+    wobbleSpeed: 0.1 + random() * 0.1,
+    velocity: startVelocity * 0.5 + random() * startVelocity,
+    angle2D: -radAngle + (0.5 * radSpread - random() * radSpread),
+    angle3D: -(Math.PI / 4) + random() * (Math.PI / 2),
+    tiltAngle: random() * Math.PI,
+    tiltAngleSpeed: 0.1 + random() * 0.3 };
+
+}
+
+function updateFetti(fetti, progress, dragFriction, decay) {
+  /* eslint-disable no-param-reassign */
+  fetti.physics.x += Math.cos(fetti.physics.angle2D) * fetti.physics.velocity;
+  fetti.physics.y += Math.sin(fetti.physics.angle2D) * fetti.physics.velocity;
+  fetti.physics.z += Math.sin(fetti.physics.angle3D) * fetti.physics.velocity;
+  fetti.physics.wobble += fetti.physics.wobbleSpeed;
+  // Backward compatibility
+  if (decay) {
+    fetti.physics.velocity *= decay;
+  } else {
+    fetti.physics.velocity -= fetti.physics.velocity * dragFriction;
+  }
+  fetti.physics.y += 3;
+  fetti.physics.tiltAngle += fetti.physics.tiltAngleSpeed;
+
+  const { x, y, tiltAngle, wobble } = fetti.physics;
+  const wobbleX = x + 10 * Math.cos(wobble);
+  const wobbleY = y + 10 * Math.sin(wobble);
+  const transform = `translate3d(${wobbleX}px, ${wobbleY}px, 0) rotate3d(1, 1, 1, ${tiltAngle}rad)`;
+
+  fetti.element.style.visibility = "visible";
+  fetti.element.style.transform = transform;
+  fetti.element.style.opacity = 1 - progress;
+
+  /* eslint-enable */
+}
+
+function animate(root, fettis, dragFriction, decay, duration, stagger) {
+  let startTime;
+
+  return new Promise(resolve => {
+    function update(time) {
+      if (!startTime) startTime = time;
+      const elapsed = time - startTime;
+      const progress = startTime === time ? 0 : (time - startTime) / duration;
+      fettis.slice(0, Math.ceil(elapsed / stagger)).forEach(fetti => {
+        updateFetti(fetti, progress, dragFriction, decay);
+      });
+
+      if (time - startTime < duration) {
+        requestAnimationFrame(update);
+      } else {
+        fettis.forEach(fetti => {
+          if (fetti.element.parentNode === root) {
+            return root.removeChild(fetti.element);
+          }
+        });
+        resolve();
+      }
+    }
+
+    requestAnimationFrame(update);
+  });
+}
+
+const defaults = {
+  angle: 90,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  width: "10px",
+  height: "10px",
+  colors: defaultColors,
+  duration: 3000,
+  stagger: 0,
+  dragFriction: 0.1,
+  random: Math.random };
+
+
+function backwardPatch(config) {
+  if (!config.stagger && config.delay) {
+    config.stagger = config.delay;
+  }
+  return config;
+}
+
+function confetti(root, config = {}) {
+  const {
+    elementCount,
+    colors,
+    width,
+    height,
+    angle,
+    spread,
+    startVelocity,
+    decay,
+    dragFriction,
+    duration,
+    stagger,
+    random } =
+  Object.assign({}, defaults, backwardPatch(config));
+  const elements = createElements(root, elementCount, colors, width, height);
+  const fettis = elements.map(element => ({
+    element,
+    physics: randomPhysics(angle, spread, startVelocity, random) }));
+
+
+  return animate(root, fettis, dragFriction, decay, duration, stagger);
+}
+          </script>
+    </body>
+</html>
